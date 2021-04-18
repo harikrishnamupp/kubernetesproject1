@@ -5,5 +5,5 @@ WORKDIR /var/www/html
 RUN unzip builderz.zip .
 RUN cp -rvf builderz/*
 RUN rm -rf builderz builderz.zip
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+CMD /usr/sbin/apache2ctl -D FOREGROUND
 EXPOSE 80
