@@ -1,6 +1,6 @@
 FROM centos:latest
 MAINTAINER harikrishna
-RUN apt-get install -y httpd \
+RUN apt-get install apache2 \
   zip \
  unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page266/builderz.zip /var/www/html/
