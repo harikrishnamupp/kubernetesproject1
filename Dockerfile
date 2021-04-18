@@ -3,11 +3,10 @@ MAINTAINER harikrishna
 RUN yum install -y httpd \
   zip \
  unzip
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page258/loxury.zip /var/www/html/
 WORKDIR /var/www/html
-RUN yum -y install wget
-RUN wget https://www.free-css.com/assets/files/free-css-templates/download/page266/builderz.zip -P /var/www/html/
-RUN unzip /var/www/html/builderz.zip
-RUN cp -rvf construction-company-website-template/* .
-RUN rm -rf construction-company-website-template builderz.zip
+RUN unzip loxury.zip
+RUN cp -rvf loxury/* .
+RUN rm -rf loxury loxury.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
